@@ -64,7 +64,7 @@ public final class Crawler implements Serializable {
         Element body = document.body();
         Element archive = body.getElementById("archive");
         Elements posts = archive.getElementsByClass("post");
-        List<PostItem> postItems = new ArrayList<>(posts.size());
+        List<PostItem> postItems = new ArrayList<PostItem>(posts.size());
         for (Element element : posts) {
             postItems.add(paresElementToPostItem(element));
         }
@@ -97,7 +97,7 @@ public final class Crawler implements Serializable {
         String title = pa1.attr("title");
         String href = pa1.attr("href");
 
-        Element pa2 = pas.first();
+        Element pa2 = pas.get(1);
         String categoryHref = pa2.attr("href");
         String categoryTag = categoryHref.substring(categoryHref.lastIndexOf("/") + 1);
         String category = pa2.text();
@@ -135,7 +135,7 @@ public final class Crawler implements Serializable {
 
         String reply = metaAs.get(1).text();
 
-        List<String> tags = new ArrayList<>(3);
+        List<String> tags = new ArrayList<String>(3);
         for (int i = 2, size = metaAs.size(); i < size; i++) {
             tags.add(metaAs.get(i).text());
         }
