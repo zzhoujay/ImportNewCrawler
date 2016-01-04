@@ -5,4 +5,6 @@
 * 支持按分类爬取
 * 支持按标签爬取
 
+具体使用参考[ImportNew安卓客户端的实现](https://github.com/zzhoujay/ImportNew)
+
 _by zzhoujay_
